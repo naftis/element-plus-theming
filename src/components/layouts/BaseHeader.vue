@@ -10,6 +10,6 @@
 // @ts-ignore
 import { toggleTheme } from '@zougt/vite-plugin-theme-preprocessor/dist/browser-utils.js';
 
-const defaultTheme = () => { console.log('using default theme'); toggleTheme('default') };
-const darkTheme = () => { console.log('using dark theme'); toggleTheme('dark') };
+const defaultTheme = () => { console.log('using default theme'); toggleTheme({ scopeName: 'default' }) };
+const darkTheme = () => { console.log('using dark theme'); toggleTheme({ scopeName: 'dark' }) };
 </script>
