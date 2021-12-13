@@ -1,19 +1,15 @@
 <template>
   <el-menu class="el-menu-demo" mode="horizontal">
-    <el-menu-item index="1">Element Plus</el-menu-item>
-    <el-sub-menu index="2">
-      <template #title>Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
-      <el-sub-menu index="2-4">
-        <template #title>item four</template>
-        <el-menu-item index="2-4-1">item one</el-menu-item>
-        <el-menu-item index="2-4-2">item two</el-menu-item>
-        <el-menu-item index="2-4-3">item three</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-    <el-menu-item index="3" disabled>Info</el-menu-item>
-    <el-menu-item index="4">Orders</el-menu-item>
+    <el-menu-item index="1" @click="defaultTheme">Default theme</el-menu-item>
+    <el-menu-item index="2" @click="darkTheme">Dark theme</el-menu-item>
   </el-menu>
 </template>
+
+<script setup lang="ts">
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { toggleTheme } from '@zougt/vite-plugin-theme-preprocessor/dist/browser-utils.js';
+
+const defaultTheme = () =>{ console.log('using default theme'); toggleTheme('default') };
+const darkTheme = () => { console.log('using dark theme'); toggleTheme('dark') };
+</script>
